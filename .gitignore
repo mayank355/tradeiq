@@ -1,0 +1,28 @@
+# Environment secrets
+.env
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+
+# ChromaDB persisted data (large, regeneratable)
+chroma_data/
+
+# Docker
+*.swp
+
+# Local notes (not part of the project deliverable)
+important.md
+phase_0.md
+phase_1.md
+project.md
+
+# Local test files
+test.pdf
+*.pdf
+
+# OS
+.DS_Store
