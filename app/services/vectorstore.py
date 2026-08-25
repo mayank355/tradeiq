@@ -16,8 +16,15 @@ def add_chunks(document_id: int, chunks: list[str], embeddings: list[list[float]
     )
 
 
-def query_chunks(query_embedding: list[float], top_k: int = 3):
+def query_chunks(query_embedding: list[float], top_k: int = 3, ticker: str | None = None):
+    """
+    Retrieve the top_k most similar chunks. If ticker is provided,
+    restricts the search to only chunks tagged with that ticker.
+    """
+    where_filter = {"ticker": ticker} if ticker else None
+
     return _collection.query(
         query_embeddings=[query_embedding],
         n_results=top_k,
+        where=where_filter,
     )
