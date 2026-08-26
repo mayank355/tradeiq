@@ -4,6 +4,7 @@ from pydantic import BaseModel
 class QueryRequest(BaseModel):
     question: str
     ticker: str | None = None
+    stock_ticker: str | None = None
     top_k: int = 3
 
 
